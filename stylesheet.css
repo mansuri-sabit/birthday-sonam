@@ -1293,9 +1293,9 @@ audio {
         font-size: 15px;
         color: #fff;
         border-radius: 50px;
-        background: linear-gradient(135deg, #ff6ec4 0%, #7873f5 50%, #4facfe 100%);
+        background: linear-gradient(135deg, #ff9ec4 0%, #ff5fa2 50%, #e0218a 100%);
         background-size: 200% 200%;
-        box-shadow: 0 6px 18px rgba(120, 115, 245, 0.45), inset 0 1px 0 rgba(255,255,255,0.35);
+        box-shadow: 0 6px 18px rgba(224, 33, 138, 0.4), inset 0 1px 0 rgba(255,255,255,0.35);
         overflow: hidden;
         transition: transform 0.25s ease, box-shadow 0.25s ease, background-position 0.6s ease;
         animation: btn-gradient 6s ease infinite, btn-pop 0.4s ease;
@@ -1324,7 +1324,7 @@ audio {
         outline: none;
         background-position: 100% 50%;
         transform: translateY(-3px) scale(1.05);
-        box-shadow: 0 10px 26px rgba(255, 110, 196, 0.55), inset 0 1px 0 rgba(255,255,255,0.5);
+        box-shadow: 0 10px 26px rgba(255, 95, 162, 0.6), inset 0 1px 0 rgba(255,255,255,0.5);
     }
     .btn-primary:active {
         transform: translateY(-1px) scale(0.98);
