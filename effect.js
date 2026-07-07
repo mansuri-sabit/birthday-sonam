@@ -168,6 +168,8 @@ $('document').ready(function(){
 	
 	$('#story').click(function(){
 		$(this).fadeOut('slow');
+		$('.balloons').fadeOut('slow');        // clear the SONAM balloons for a clean message scene
+		$('.photo-wrap').fadeIn('slow');       // reveal Sonam's decorated photo
 		$('.cake').fadeOut('fast').promise().done(function(){
 			$('.message').fadeIn('slow');
 		});

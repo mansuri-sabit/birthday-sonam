@@ -1350,6 +1350,56 @@ audio {
     }*/
 
 /* =====================================================
+   SONAM PHOTO — decorative animated frame
+   ===================================================== */
+.photo-wrap {
+    display: none;
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 200;
+    text-align: center;
+    pointer-events: none;
+}
+.photo-frame {
+    display: inline-block;
+    padding: 9px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #ff9ec4 0%, #ff5fa2 50%, #e0218a 100%);
+    background-size: 200% 200%;
+    box-shadow: 0 16px 38px rgba(224, 33, 138, 0.45), 0 6px 14px rgba(0,0,0,0.3);
+    transform: rotate(-3deg);
+    animation: btn-gradient 6s ease infinite, photo-pop 0.7s cubic-bezier(0.34,1.56,0.64,1);
+}
+.photo-inner {
+    background: #fff;
+    border-radius: 13px;
+    padding: 9px 9px 4px;
+    overflow: hidden;
+}
+.photo-frame img {
+    display: block;
+    width: 230px;
+    max-width: 62vw;
+    height: auto;
+    border-radius: 9px;
+}
+.photo-caption {
+    font-family: 'Signika', sans-serif;
+    font-weight: 700;
+    color: #e0218a;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    padding: 9px 4px 5px;
+    white-space: nowrap;
+}
+@keyframes photo-pop {
+    0%   { transform: rotate(-3deg) scale(0.4); opacity: 0; }
+    100% { transform: rotate(-3deg) scale(1); opacity: 1; }
+}
+
+/* =====================================================
    RESPONSIVE / MOBILE
    ===================================================== */
 
@@ -1389,6 +1439,12 @@ audio {
         width: 100%;
         padding: 0 8px;
     }
+    .photo-frame img {
+        width: 180px;
+    }
+    .photo-caption {
+        font-size: 16px;
+    }
 }
 
 /* Phones */
@@ -1426,5 +1482,19 @@ audio {
         letter-spacing: 0.3px;
         white-space: normal;
         max-width: 92vw;
+    }
+    .photo-wrap {
+        top: 14px;
+    }
+    .photo-frame {
+        padding: 7px;
+    }
+    .photo-frame img {
+        width: 150px;
+        max-width: 56vw;
+    }
+    .photo-caption {
+        font-size: 14px;
+        padding: 7px 4px 4px;
     }
 }
