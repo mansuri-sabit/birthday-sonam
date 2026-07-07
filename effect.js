@@ -4,16 +4,24 @@ $(window).load(function(){
 });
 $('document').ready(function(){
 		var vw;
+		// Lay the 7 balloons out in a centered row that fits any screen width
+		function positionBalloons() {
+			var ww = $(window).width();
+			var bw = $('.balloons').outerWidth() || 100;
+			var count = 7;
+			// spacing between balloon left-edges: never wider than a balloon,
+			// and shrinks (balloons overlap slightly) on narrow phones so all stay on screen
+			var spacing = Math.min(bw, (ww - bw) / (count - 1));
+			var startLeft = (ww - (spacing * (count - 1) + bw)) / 2;
+			var topPos = ww <= 600 ? 160 : 240;
+			var ids = ['#b11','#b22','#b33','#b44','#b55','#b66','#b77'];
+			for (var i = 0; i < count; i++) {
+				$(ids[i]).stop().animate({top: topPos, left: startLeft + i * spacing}, 500);
+			}
+		}
 		$(window).resize(function(){
-			 vw = $(window).width()/2;
 			$('#b1,#b2,#b3,#b4,#b5,#b6,#b7').stop();
-			$('#b11').animate({top:240, left: vw-350},500);
-			$('#b22').animate({top:240, left: vw-250},500);
-			$('#b33').animate({top:240, left: vw-150},500);
-			$('#b44').animate({top:240, left: vw-50},500);
-			$('#b55').animate({top:240, left: vw+50},500);
-			$('#b66').animate({top:240, left: vw+150},500);
-			$('#b77').animate({top:240, left: vw+250},500);
+			positionBalloons();
 		});
 
 	$('#turn_on').click(function(){
@@ -150,13 +158,7 @@ $('document').ready(function(){
 		$('#b5').attr('id','b55')
 		$('#b6').attr('id','b66')
 		$('#b7').attr('id','b77')
-		$('#b11').animate({top:240, left: vw-350},500);
-		$('#b22').animate({top:240, left: vw-250},500);
-		$('#b33').animate({top:240, left: vw-150},500);
-		$('#b44').animate({top:240, left: vw-50},500);
-		$('#b55').animate({top:240, left: vw+50},500);
-		$('#b66').animate({top:240, left: vw+150},500);
-		$('#b77').animate({top:240, left: vw+250},500);
+		positionBalloons();
 		$('.balloons').css('opacity','0.9');
 		$('.balloons h2').fadeIn(1500);
 		$(this).fadeOut('slow').delay(1500).promise().done(function(){
