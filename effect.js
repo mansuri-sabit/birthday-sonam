@@ -175,6 +175,8 @@ $('document').ready(function(){
 			$("p:nth-child("+i+")").fadeIn('slow').delay(600);
 			if(i==50){
 				$("p:nth-child(49)").fadeOut('slow').promise().done(function () {
+					$('.photo-frame').fadeOut('slow');   // clear Sonam's photo so the cake stands alone
+					$('.photo-wrap').addClass('note-only');  // note drops below the cake once the photo is gone
 					$('.cake').fadeIn('fast');
 					$('.final-note').fadeIn('slow');
 				});

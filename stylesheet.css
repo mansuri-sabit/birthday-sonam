@@ -1279,7 +1279,13 @@ audio {
 	height: auto;
 }
 .message {
-	margin-top: 200px;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 90px;
+	z-index: 150;
+	padding: 0 20px;
+	text-align: center;
 	display: none;
 }
 .message p {
@@ -1366,9 +1372,9 @@ audio {
 .photo-wrap {
     display: none;
     position: fixed;
-    top: 24px;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     z-index: 200;
     text-align: center;
     pointer-events: none;
@@ -1408,6 +1414,11 @@ audio {
 @keyframes photo-pop {
     0%   { transform: rotate(-3deg) scale(0.4); opacity: 0; }
     100% { transform: rotate(-3deg) scale(1); opacity: 1; }
+}
+.photo-wrap.note-only {
+    top: auto;
+    bottom: 10%;
+    transform: translateX(-50%);
 }
 .final-note {
     display: none;
@@ -1454,7 +1465,7 @@ audio {
         height: 52px;
     }
     .message {
-        margin-top: 120px;
+        bottom: 70px;
         padding: 0 12px;
     }
     .message p {
@@ -1506,7 +1517,7 @@ audio {
         margin-top: 20px;
     }
     .message {
-        margin-top: 90px;
+        bottom: 50px;
     }
     .message p {
         font-size: 18px;
@@ -1518,9 +1529,6 @@ audio {
         letter-spacing: 0.3px;
         white-space: normal;
         max-width: 92vw;
-    }
-    .photo-wrap {
-        top: 14px;
     }
     .photo-frame {
         padding: 7px;
