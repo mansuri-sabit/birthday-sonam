@@ -1267,6 +1267,17 @@ audio {
 .cake-cover {
 	margin-top: 50px;
 }
+.cake {
+	position: absolute;
+	display: none;
+	left: 50%;
+	margin-left: -150px;
+	width: 300px;
+}
+.cake img {
+	width: 100%;
+	height: auto;
+}
 .message {
 	margin-top: 200px;
 	display: none;
@@ -1398,6 +1409,26 @@ audio {
     0%   { transform: rotate(-3deg) scale(0.4); opacity: 0; }
     100% { transform: rotate(-3deg) scale(1); opacity: 1; }
 }
+.final-note {
+    display: none;
+    margin: 18px auto 0;
+    width: 520px;
+    max-width: 88vw;
+    padding: 16px 20px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 10px 26px rgba(224, 33, 138, 0.35);
+    font-family: 'Signika', sans-serif;
+    color: #C4515C;
+    font-size: 20px;
+    line-height: 1.5;
+}
+.final-note-line {
+    margin-bottom: 10px;
+}
+.final-note-line:last-child {
+    margin-bottom: 0;
+}
 
 /* =====================================================
    RESPONSIVE / MOBILE
@@ -1438,6 +1469,11 @@ audio {
         margin-left: 0;
         width: 100%;
         padding: 0 8px;
+    }
+    .final-note {
+        font-size: 17px;
+        padding: 14px 16px;
+        margin-top: 14px;
     }
     .photo-frame img {
         width: 180px;
@@ -1496,5 +1532,15 @@ audio {
     .photo-caption {
         font-size: 14px;
         padding: 7px 4px 4px;
+    }
+    .final-note {
+        font-size: 15px;
+        padding: 12px 14px;
+        margin-top: 12px;
+        max-width: 92vw;
+        line-height: 1.45;
+    }
+    .final-note-line {
+        margin-bottom: 8px;
     }
 }
